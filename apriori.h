@@ -52,7 +52,8 @@ generate(vector<vector<int>> *data, vector<vector<int>> *candidate_set, int k_ge
     for (int i = 0; i < candidate_set->size(); i++) {
         for (int j = i + 1; j < candidate_set->size(); j++) {
             vector<int> res(dim);
-            combine((candidate_set->data() + i), (candidate_set->data() + j), &res, k_gen);
+            bool tmp = combine((candidate_set->data() + i), (candidate_set->data() + j), &res, k_gen);
+            if (!tmp) { break; }
             if (!count(new_set.begin(), new_set.end(), res)) {
                 if (support(data, &res) + 1 > min_sup) {
                     new_set.push_back(res);
