@@ -2,7 +2,7 @@
 
 ### Step
 
-First, please use gcc or g++ to obtain executable file.
+First, please use clang++ or g++ to obtain executable file, using parameter -std=c++17 or 14 or 11.
 
 Then, store the comma-separated values in to a .csv file which has the same directory as the executable file.
 
